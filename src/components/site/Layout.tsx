@@ -115,6 +115,9 @@ export function SiteFooter() {
               {item.label}
             </Link>
           ))}
+          <Link to="/auth" className="block text-muted-foreground hover:text-primary">
+            Administrar
+          </Link>
         </div>
       </div>
       <div className="border-t border-border/60 px-5 py-5 text-center text-xs text-muted-foreground">
