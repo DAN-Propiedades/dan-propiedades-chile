@@ -69,7 +69,7 @@ function Contacto() {
               Nombre
             </label>
             <input id="nombre" name="nombre" maxLength={80} className={`mt-1 ${inputClass}`} />
-            {errors.nombre && <p className="mt-1 text-xs text-destructive">{errors.nombre}</p>}
+            {errors['nombre'] && <p className="mt-1 text-xs text-destructive">{errors['nombre']}</p>}
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
@@ -77,7 +77,7 @@ function Contacto() {
                 Correo
               </label>
               <input id="email" name="email" type="email" maxLength={255} className={`mt-1 ${inputClass}`} />
-              {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+              {errors['email'] && <p className="mt-1 text-xs text-destructive">{errors['email']}</p>}
             </div>
             <div>
               <label htmlFor="telefono" className="text-sm font-medium text-foreground">
@@ -91,7 +91,7 @@ function Contacto() {
               Mensaje
             </label>
             <textarea id="mensaje" name="mensaje" rows={5} maxLength={1000} className={`mt-1 ${inputClass}`} />
-            {errors.mensaje && <p className="mt-1 text-xs text-destructive">{errors.mensaje}</p>}
+            {errors['mensaje'] && <p className="mt-1 text-xs text-destructive">{errors['mensaje']}</p>}
           </div>
           <button
             type="submit"
