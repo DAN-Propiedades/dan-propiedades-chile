@@ -96,7 +96,7 @@ export const SITE = {
   nombre: "Dan Propiedades",
   telefono: "+56 9 9840 2814",
   whatsapp: "56998402814",
-  email: "info@danpropiedades.cl",
+  email: "info.danpropiedades@gmail.com",
   direccion: "Santiago, Chile",
 };
 
