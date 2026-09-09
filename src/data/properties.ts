@@ -46,3 +46,6 @@ export const SITE = {
 
 export const whatsappLink = (mensaje: string) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+
+export const imageOf = (p: Property) =>
+  p.imagen || fallbackImages[p.id] || defaultImage;
