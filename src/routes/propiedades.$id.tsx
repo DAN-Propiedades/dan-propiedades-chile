@@ -50,7 +50,7 @@ function Ficha() {
 
       <div className="mt-6 overflow-hidden rounded-3xl">
         <img
-          src={property.imagen}
+          src={imageOf(property)}
           alt={`${property.titulo} en ${property.comuna}`}
           width={1200}
           height={800}
