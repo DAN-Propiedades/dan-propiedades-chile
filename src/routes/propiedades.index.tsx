@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { properties } from "@/data/properties";
 import { PropertyCard } from "@/components/site/PropertyCard";
+import { listPropiedades } from "@/lib/propiedades.functions";
 
 export const Route = createFileRoute("/propiedades/")({
+  loader: () => listPropiedades(),
   head: () => ({
     meta: [
       { title: "Catálogo de propiedades en venta | Dan Propiedades" },
@@ -19,10 +20,16 @@ export const Route = createFileRoute("/propiedades/")({
       },
     ],
   }),
+  errorComponent: () => (
+    <div className="mx-auto max-w-6xl px-5 py-20 text-muted-foreground">
+      No pudimos cargar el catálogo en este momento. Vuelve a intentarlo en unos minutos.
+    </div>
+  ),
   component: Catalogo,
 });
 
 function Catalogo() {
+  const properties = Route.useLoaderData();
   const [tipo, setTipo] = useState<string>("Todas");
   const [comuna, setComuna] = useState<string>("Todas");
 
@@ -34,7 +41,7 @@ function Catalogo() {
       properties.filter(
         (p) => (tipo === "Todas" || p.tipo === tipo) && (comuna === "Todas" || p.comuna === comuna),
       ),
-    [tipo, comuna],
+    [properties, tipo, comuna],
   );
 
   const selectClass =

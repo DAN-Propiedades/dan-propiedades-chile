@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { BedDouble, Bath, Ruler, MapPin } from "lucide-react";
-import { formatUF, type Property } from "@/data/properties";
+import { formatUF, imageOf, type Property } from "@/data/properties";
 
 export function PropertyCard({ property }: { property: Property }) {
   return (
@@ -11,7 +11,7 @@ export function PropertyCard({ property }: { property: Property }) {
     >
       <div className="relative aspect-[3/2] overflow-hidden">
         <img
-          src={property.imagen}
+          src={imageOf(property)}
           alt={`${property.tipo} en ${property.comuna}: ${property.titulo}`}
           loading="lazy"
           width={1200}
