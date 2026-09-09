@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, MessageCircle, Mail, Phone } from "lucide-react";
 import { SITE, whatsappLink } from "@/data/properties";
+import logoAsset from "@/assets/logo-dan-propiedades.jpg.asset.json";
 
 const nav = [
   { to: "/", label: "Inicio" },
@@ -15,11 +16,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4">
-        <Link to="/" className="flex min-w-0 items-center gap-2">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary font-display text-sm font-bold text-primary-foreground">
-            DP
-          </span>
-          <span className="truncate font-display text-lg font-bold tracking-tight text-foreground">
+        <Link to="/" className="flex min-w-0 items-center gap-3">
+          <img
+            src={logoAsset.url}
+            alt="Dan Propiedades - Corredores de Propiedades"
+            width={120}
+            height={60}
+            className="h-10 w-auto shrink-0 rounded-md bg-white object-contain px-1"
+          />
+          <span className="hidden truncate font-display text-lg font-bold tracking-tight text-foreground sm:inline">
             Dan Propiedades
           </span>
         </Link>
@@ -77,10 +82,16 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-secondary">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
         <div>
-          <p className="font-display text-lg font-bold text-foreground">{SITE.nombre}</p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Corretaje de propiedades en Chile. Venta de casas, departamentos y terrenos con
-            asesoría cercana y transparente.
+          <img
+            src={logoAsset.url}
+            alt="Dan Propiedades - Corredores de Propiedades"
+            width={160}
+            height={80}
+            className="h-14 w-auto rounded-md bg-white object-contain px-2 py-1"
+          />
+          <p className="mt-3 text-sm text-muted-foreground">
+            Corredores de Propiedades. Venta de casas, departamentos y terrenos con asesoría
+            cercana y transparente.
           </p>
         </div>
         <div className="space-y-2 text-sm text-muted-foreground">
