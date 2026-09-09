@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, ShieldCheck, Handshake, Search } from "lucide-react";
 import hero from "@/assets/hero.jpg";
-import { properties, whatsappLink } from "@/data/properties";
+import { whatsappLink } from "@/data/properties";
 import { PropertyCard } from "@/components/site/PropertyCard";
+import { listPropiedades } from "@/lib/propiedades.functions";
 
 export const Route = createFileRoute("/")({
+  loader: () => listPropiedades(),
   head: () => ({
     meta: [
       { title: "Dan Propiedades | Casas y departamentos en venta en Chile" },
@@ -24,7 +26,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const destacadas = properties.filter((p) => p.destacada);
+  const properties = Route.useLoaderData();
+  const destacadas = properties.filter((p) => p.destacada).slice(0, 3);
 
   return (
     <div>

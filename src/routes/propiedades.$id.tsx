@@ -1,10 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { BedDouble, Bath, Ruler, Trees, Car, MapPin, MessageCircle, Check } from "lucide-react";
-import { formatUF, getProperty, SITE, whatsappLink } from "@/data/properties";
+import { formatUF, imageOf, SITE, whatsappLink } from "@/data/properties";
+import { getPropiedad } from "@/lib/propiedades.functions";
 
 export const Route = createFileRoute("/propiedades/$id")({
-  loader: ({ params }) => {
-    const property = getProperty(params.id);
+  loader: async ({ params }) => {
+    const property = await getPropiedad({ data: { slug: params.id } });
     if (!property) throw notFound();
     return { property };
   },
