@@ -161,7 +161,7 @@ function AdminPage() {
       .from("propiedades")
       .update({ publicada: !fila.publicada })
       .eq("id", fila.id);
-    if (error) return toast.error("No se pudo cambiar la visibilidad");
+    if (error) { toast.error("No se pudo cambiar la visibilidad"); return; }
     toast.success(fila.publicada ? "Propiedad oculta del sitio" : "Propiedad publicada");
     await cargar();
   }
@@ -171,14 +171,14 @@ function AdminPage() {
       .from("propiedades")
       .update({ destacada: !fila.destacada })
       .eq("id", fila.id);
-    if (error) return toast.error("No se pudo cambiar el destacado");
+    if (error) { toast.error("No se pudo cambiar el destacado"); return; }
     await cargar();
   }
 
   async function eliminar(fila: Fila) {
     if (!confirm(`¿Eliminar definitivamente "${fila.titulo}"?`)) return;
     const { error } = await supabase.from("propiedades").delete().eq("id", fila.id);
-    if (error) return toast.error("No se pudo eliminar");
+    if (error) { toast.error("No se pudo eliminar"); return; }
     toast.success("Propiedad eliminada");
     await cargar();
   }
