@@ -39,7 +39,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
         <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
           <p className="font-medium uppercase tracking-[0.2em] text-accent">
-            Corretaje en Chile
+            Corredores de Propiedades
           </p>
           <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight text-primary-foreground sm:text-6xl">
             Encuentra la propiedad donde empieza tu próxima etapa

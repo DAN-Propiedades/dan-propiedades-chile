@@ -94,9 +94,9 @@ export const formatUF = (uf: number) =>
 
 export const SITE = {
   nombre: "Dan Propiedades",
-  telefono: "+56 9 1234 5678",
-  whatsapp: "56912345678",
-  email: "contacto@danpropiedades.cl",
+  telefono: "+56 9 9840 2814",
+  whatsapp: "56998402814",
+  email: "info@danpropiedades.cl",
   direccion: "Santiago, Chile",
 };
 
